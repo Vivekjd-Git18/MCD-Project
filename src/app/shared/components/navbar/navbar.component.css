@@ -1,0 +1,21 @@
+.style1 {
+    color: black;
+    font-weight: bold;
+    display: inline;
+    border-bottom: 3px solid #f3d216;
+  }
+  
+.none{
+    font-weight: none;
+}
+
+
+div.form-group.required>label:first-child:after{
+  content: '*';
+  color: red;
+  padding-left: 3px;
+}
+
+.nav-item{
+  margin-left: 38px;
+}

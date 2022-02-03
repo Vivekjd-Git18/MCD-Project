@@ -1,0 +1,186 @@
+<!-- <!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3"
+      crossorigin="anonymous"
+    />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Open+Sans&display=swap"
+      rel="stylesheet"
+    />
+    <title>HOME PAGE</title>
+    <link
+      rel="shortcut icon"
+      type="image/jpg"
+      href="images/Logo.svg"
+      width="70"
+    />
+  </head>
+  <body>
+ -->
+
+
+
+
+
+
+
+
+
+<!-- homepage content -->
+
+<div class="w-90 mx-4">
+    <div class="row">
+      <!--Products carousel stars-->
+      <app-grid-cards></app-grid-cards>
+      <!--Products carousel starends-->
+    </div>
+
+    <!-- for seach menu bar -->
+    <div class="row">
+      <app-search-menubar></app-search-menubar>
+    </div>
+
+
+    <!-- Force next columns to break to new line at md breakpoint and up -->
+    <div class="w-100 d-none d-md-block"></div>
+
+    <div class="row">
+      <div
+        class="col-lg-2 col-md-2 border border-start-0 border-bottom-0 list1"
+        style="overflow: scroll; height: 590px"
+      >
+        <app-list1></app-list1>
+      </div>
+
+      <div
+        class="col-lg-7 col-md-10 border border-start-0 border-bottom-0"
+        style="overflow: scroll; height: 590px"
+      >
+        <app-product-list></app-product-list>
+      </div>
+
+      <div class="col-lg-3 col-md-12 border border-start-0 border-bottom-0">
+        <app-cart-block></app-cart-block>
+      </div>
+    </div>
+
+    <!-- footer starts -->
+    <!-- <app-footer1></app-footer1> -->
+    <!-- <footer> -->
+  </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+
+<div *ngIf="bool; then thenTemplate else elseTemplate"></div>
+<ng-template #thenTemplate>
+
+  <div>
+    <!-- <app-navbar (parentFun)="parentFun($event)"></app-navbar> -->
+  </div>
+<div><router-outlet></router-outlet></div>
+    <!-------------------------------------------------------- grid starts-------------------------------------------------------->
+
+    <div class="w-90 mx-4">
+      <div class="row">
+        <!--Products carousel stars-->
+        <!-- <app-grid-cards></app-grid-cards> -->
+        <!--Products carousel starends-->
+      </div>
+
+      <!-- for seach menu bar -->
+      <div class="row">
+        <!-- <app-search-menubar></app-search-menubar> -->
+      </div>
+ 
+
+      <!-- Force next columns to break to new line at md breakpoint and up -->
+      <div class="w-100 d-none d-md-block"></div>
+
+      <div class="row">
+        <div
+          class="col-lg-2 col-md-2 border border-start-0 border-bottom-0 list1"
+          style="overflow: scroll; height: 590px"
+        >
+          <!-- <app-list1></app-list1> -->
+        </div>
+
+        <div
+          class="col-lg-7 col-md-10 border border-start-0 border-bottom-0"
+          style="overflow: scroll; height: 590px"
+        >
+          <!-- <app-product-list></app-product-list> -->
+        </div>
+
+        <div class="col-lg-3 col-md-12 border border-start-0 border-bottom-0">
+          <!-- <app-cart-block></app-cart-block> -->
+        </div>
+      </div>
+
+      <!-- footer starts -->
+      <!-- <app-footer1></app-footer1> -->
+      <!-- <footer> -->
+    </div>
+
+    <!-- side bar starts here -->
+    <div
+      class="offcanvas offcanvas-start"
+      style="width: 590px"
+      tabindex="-1"
+      id="offcanvas"
+      data-bs-keyboard="false"
+      data-bs-backdrop="false"
+    >
+      <app-sidebar></app-sidebar>
+    </div>
+    <!-- sidebar ends here -->
+  </ng-template>
+  <ng-template #elseTemplate>
+    <!-- <app-home2></app-home2> -->
+  </ng-template>
+
+
+
+
+  <!-- </body>
+</html> -->
+
+<!-- <app-navbar2></app-navbar2> -->

@@ -1,0 +1,51 @@
+footer{
+    background-color: rgba(34, 16, 16, 0.952);
+    height: 290px;
+    font-family: 'Open Sans', sans-serif;
+    font-size: x-small;
+    padding-left: 7px;
+}
+
+hr.line1{
+    border: 5px solid rgb(255, 255, 255); 
+}
+.ftr-txt{
+    color: rgba(150, 87, 35, 0.692);
+}
+
+.ftr-txt:hover{
+    color: rgb(206, 241, 8);
+}
+
+
+
+
+
+
+
+
+
+
+.navbar{
+    background-color: rgba(34, 16, 16, 0.952);
+    height: 78px;
+}
+.homeimg{
+  padding-right: 100px;
+}
+.hov{
+    display: inline-block;
+    position: relative;
+    color: #4e460b;
+  }
+  .dash{
+    display: inline-block;
+    position: relative;
+    color: #ffe926;
+
+  }
+  .hov:hover{
+    display: inline-block;
+    position: relative;
+    color: #ffe926;
+  }

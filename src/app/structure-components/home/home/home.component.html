@@ -1,0 +1,92 @@
+<!-- 
+<app-navbar></app-navbar>
+<app-footer1></app-footer1>
+<app-grid-cards></app-grid-cards>
+
+        <app-search-menubar></app-search-menubar>
+        <app-list1></app-list1>
+        <app-product-list></app-product-list>
+        <app-cart-block></app-cart-block> -->
+
+
+
+
+
+
+
+
+
+
+
+
+        
+
+
+
+  <div>
+    <app-navbar></app-navbar>
+  </div>
+<!-- <div><router-outlet></router-outlet></div> -->
+    <!-------------------------------------------------------- grid starts-------------------------------------------------------->
+
+    <div class="w-90 mx-4">
+      <div class="row">
+        <!--Products carousel stars-->
+        <app-grid-cards></app-grid-cards>
+        <!--Products carousel starends-->
+      </div>
+
+      <!-- for seach menu bar -->
+      <div class="row">
+        <app-search-menubar></app-search-menubar>
+      </div>
+ 
+
+      <!-- Force next columns to break to new line at md breakpoint and up -->
+      <div class="w-100 d-none d-md-block"></div>
+
+      <div class="row">
+        <div
+          class="col-lg-2 col-md-2 border border-start-0 border-bottom-0 list1"
+          style="overflow: scroll; height: 590px"
+        >
+          <app-list1></app-list1>
+        </div>
+
+        <div
+          class="col-lg-7 col-md-10 border border-start-0 border-bottom-0"
+          style="overflow: scroll; height: 590px"
+        >
+          <app-product-list></app-product-list>
+        </div>
+
+        <div class="col-lg-3 col-md-12 border border-start-0 border-bottom-0">
+          <app-cart-block></app-cart-block>
+        </div>
+      </div>
+
+      <!-- footer starts -->
+      <app-footer1></app-footer1>
+      <!-- <footer> -->
+    </div>
+
+    <!-- side bar starts here -->
+    <div
+      class="offcanvas offcanvas-start"
+      style="width: 590px"
+      tabindex="-1"
+      id="offcanvas"
+      data-bs-keyboard="false"
+      data-bs-backdrop="false"
+    >
+      <app-sidebar></app-sidebar>
+    </div>
+    <!-- sidebar ends here -->
+
+
+
+
+  <!-- </body>
+</html> -->
+
+<!-- <app-navbar2></app-navbar2> -->

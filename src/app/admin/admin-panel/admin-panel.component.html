@@ -1,0 +1,109 @@
+<nav class="navbar navbar-expand-lg navbar-light text-light bg-dark">
+    <div class="container-fluid">
+        <a href="#" class="navbar-brand text-light">DASHBOARD</a>
+        <div class="d-flex flex-row">
+            <button class="btn btn-success"  data-bs-toggle="modal" data-bs-target="#exampleModal" (click)="addButton()">Add Products</button>
+            <button class="btn btn-success ms-3" (click)="getProducts()">See Products</button>
+        </div>
+    </div>
+</nav>
+
+<div>
+<table class="table mt-3">
+    <thead>
+        <tr>
+        </tr>
+    </thead>
+        <th scope="col" class="text-center">Name</th>
+        <th scope="col" class="text-center">Image</th>
+        <th scope="col" class="text-center">Description</th>
+        <th scope="col" class="text-center">Category</th>
+        <th scope="col" class="text-center">Calorie</th>
+        <th scope="col" class="text-center">Price</th>
+        <th scope="col" class="text-center">Action</th>
+    <tbody>
+        <tr *ngFor="let row of productData">
+            <td>{{row.name}}</td>
+            <td>
+              <img id="img_1" src="{{row.productImage}}" class="card-img-top ms-3 mt-2 " style="height: 90px;width:110px;" alt="...">
+            </td>
+            <td>{{row.productDescription}}</td>
+            <td>
+              <img id="img_cat_1" src="{{row.categoryImage}}" alt="">
+            </td>
+            <td>{{row.calories}}</td>
+            <td>{{row.price}}</td>
+            <td >
+              <div class="d-flex flex-row">
+                
+                <div><button class="btn btn-dark" (click)="editProduct(row)" data-bs-toggle="modal" data-bs-target="#exampleModal">Edit</button></div>
+                <div><button class="btn btn-danger mx-3" (click)="deleteProduct(row)">Delete</button></div>
+              </div>
+            </td>
+        </tr>
+    </tbody>
+</table>
+</div>
+
+
+
+
+
+<!-- modal -->
+<!-- Button trigger modal -->
+<!-- <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal">
+    Launch demo modal
+  </button> -->
+  
+  <!-- Modal -->
+  <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="exampleModalLabel">Product Detail</h5>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body">
+            <form [formGroup]="product_Form">
+                <div class="mb-3">
+                  <label for="name" class="form-label">Name</label>
+                  <input type="text" formControlName="name" class="form-control" id="name">
+                </div>
+                <div class="mb-3">
+                    <label for="desc" class="form-label">Desc</label>
+                    <input type="text" formControlName="desc" class="form-control" id="desc">
+                  </div>
+                  <div class="mb-3">
+                    <label for="image" class="form-label">Product Image</label>
+                    <input type="text" formControlName="productImage" class="form-control" id="image">
+                  </div>
+
+<!--  name: [''],
+      desc: [''],
+      category: [''],
+      price: [''],
+      calorie: [''],
+      productImage: [''], -->
+
+                  <div class="mb-3">
+                    <label for="category" class="form-label">category</label>
+                    <input type="text" formControlName="category" class="form-control" id="category">
+                  </div>
+                  <div class="mb-3">
+                    <label for="calorie" class="form-label">calorie</label>
+                    <input type="number" formControlName="calorie" class="form-control" id="calorie">
+                  </div>
+                  <div class="mb-3">
+                    <label for="price" class="form-label">Price</label>
+                    <input type="number" formControlName="price" class="form-control" id="price">
+                  </div>
+              </form>
+        </div>
+        <div class="modal-footer">
+          <button type="button" id="close" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+          <button type="button" class="btn btn-primary" (click)="postProduct()" *ngIf="showAddButton">Add</button>
+          <button type="button" class="btn btn-primary" (click)="updateProduct()" *ngIf="showUpdateButton">Update</button>
+        </div>
+      </div>
+    </div>
+  </div>

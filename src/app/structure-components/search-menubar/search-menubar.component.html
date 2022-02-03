@@ -1,0 +1,111 @@
+<div class="row flex-sm-nowrap" id="store">
+  <div
+    class="col-12 d-inline-flex justify-content-center border-top p-3 bg-light me-2"
+  >
+    <div>
+      <label for="search">
+        <input
+          style="width: 390px"
+          id="menu-search"
+          name="search"
+          placeholder="Search from menu"
+          type="text"
+          class="border-top-0 border-start-0 border-end-0 border-secondary bg-light text-secondary"
+        />
+        <!-- <hr style="border-top: 1px solid #8c8b8b; border-bottom: 1px solid #fff;"> -->
+        <img
+          alt="search"
+          src="https://images.mcdelivery.co.in/hardcastle-restaurants-pvt-ltd/image/upload/v1591261933/NewWebsiteResource2020/Assets/Img/Search_inactive.svg"
+        />
+      </label>
+    </div>
+
+    <div class="d-flex flex-row ms-5">
+      <div>
+        <img
+          src="../../assets/images/calorie.svg"
+          style="width: 17px; height: 16px"
+        />
+        <label class="form-check-label ms-2 mt-1" for="flexSwitchCheckDefault1" >Calories</label
+        >
+      </div>
+      <div class="form-switch ms-2">
+        <input
+          class="form-check-input"
+          style="height: 25px; width: 51px"
+          type="checkbox"
+          role="switch"
+          id="flexSwitchCheckDefault1"
+          (click)="hit()"
+          
+        />
+      </div>
+
+      <div class="ms-4">
+        <img
+          src="../../assets/images/Veg.svg"
+          style="width: 17px; height: 16px"
+        />
+        <label class="form-check-label ms-2 mt-1" for="flexSwitchCheckDefault"
+          >Veg Only</label
+        >
+      </div>
+      <div class="form-switch ms-2">
+        <input
+          class="form-check-input"
+          style="height: 25px; width: 51px"
+          type="checkbox"
+          role="switch"
+          id="flexSwitchCheckDefault"
+        />
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- toggles -->
+<!-- 
+<div _ngcontent-ssp-c3="" class="toggle-section">
+  <app-calorie-veg _ngcontent-ssp-c3="" _nghost-ssp-c7=""
+    ><div _ngcontent-ssp-c7="" class="common-filter">
+      <div _ngcontent-ssp-c7="" class="calorie-filter">
+        <img
+          _ngcontent-ssp-c7=""
+          alt="calorie"
+          loading="lazy"
+          src="https://images.mcdelivery.co.in/hardcastle-restaurants-pvt-ltd/image/upload/v1591261933/NewWebsiteResource2020/Assets/Img/calorie.svg"
+        />
+        <p _ngcontent-ssp-c7="">Calorie</p>
+        <label _ngcontent-ssp-c7="" class="switch"
+          ><input
+            _ngcontent-ssp-c7=""
+            checked=""
+            type="checkbox"
+            class="ng-valid ng-dirty ng-touched" /><span
+            _ngcontent-ssp-c7=""
+            class="slider round"
+          ></span
+        ></label>
+      </div>
+      <div _ngcontent-ssp-c7="" class="veg-filter">
+        <img
+          _ngcontent-ssp-c7=""
+          alt="veg"
+          height="12px"
+          loading="lazy"
+          src="https://images.mcdelivery.co.in/hardcastle-restaurants-pvt-ltd/image/upload/v1591261933/NewWebsiteResource2020/Assets/Img/Veg.svg"
+          width="12px"
+        />
+        <p _ngcontent-ssp-c7="">Veg Only</p>
+        <label _ngcontent-ssp-c7="" class="switch"
+          ><input
+            _ngcontent-ssp-c7=""
+            type="checkbox"
+            class="ng-untouched ng-pristine ng-valid" /><span
+            _ngcontent-ssp-c7=""
+            class="slider round"
+          ></span
+        ></label>
+      </div></div
+  ></app-calorie-veg>
+</div> -->
