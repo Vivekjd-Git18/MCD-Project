@@ -121,14 +121,28 @@
     </div>
 </nav> -->
 
-
-
 <!-- modal popup -->
 
 <ng-template #content let-modal>
   <div class="modal-header">
-    <h4 class="modal-title" [ngClass]="formChoice ? 'style1' : 'none'" id="modal-basic-title"(click)="changeToSignup()" style="cursor: pointer;">Login</h4>
-    <h4 class="modal-title" [ngClass]="!formChoice ? 'style1' : 'none'" id="modal-basic-title"(click)="changeToLogin()" style="cursor: pointer;">Sign-up</h4>
+    <h4
+      class="modal-title"
+      [ngClass]="formChoice ? 'style1' : 'none'"
+      id="modal-basic-title"
+      (click)="changeToSignup()"
+      style="cursor: pointer"
+    >
+      Login
+    </h4>
+    <h4
+      class="modal-title"
+      [ngClass]="!formChoice ? 'style1' : 'none'"
+      id="modal-basic-title"
+      (click)="changeToLogin()"
+      style="cursor: pointer"
+    >
+      Sign-up
+    </h4>
     <button
       type="button"
       class="close"
@@ -139,240 +153,296 @@
     </button>
   </div>
   <div class="modal-body">
-    <div *ngIf="formChoice; then thenTemplate else elseTemplate"></div>
-    <ng-template #thenTemplate> 
-    <form #form='ngForm' autocomplete="off" (submit)="onSubmitLogin(form)">
-      <div class="form-group required">
-        <label for="">username</label>
-        <input class="form-control" #username="ngModel" name="username" [(ngModel)]="Login_formModel.username">
-        <label class="text-danger" *ngIf="f['username'].touched && 
-        f['username'].errors && f['username'].errors['required']
-        ">this is mandotary</label>
-      </div>
-      <div class="form-group required">
-        <label for="">password</label>
-        <input class="form-control" #password="ngModel" name="password" [(ngModel)]="Login_formModel.password">
-        <label class="text-danger" *ngIf="f['username'].touched && 
-        f['username'].errors && f['username'].errors['required']
-        ">this is mandotary</label>
-      </div>
-      <div class="modal-footer">
-        <button type="submit" [disabled]="form.invalid" class="btn btn-warning mx-auto" (click)="modal.close('Save click')">Login</button>
-      </div>    
-    </form>
-  </ng-template> 
-  <ng-template #elseTemplate>
-    <form [formGroup]="Reg_formModel" (submit)="onSubmit()"  autocomplete="off">
-      <div class="form-group required">
-        <label for="">email</label>
-        <input class="form-control" formControlName='email'>
-        <label class="text-danger" *ngIf="f['email'].touched && 
-        f['email'].errors && f['email'].errors['email']
-        ">not valid email</label>
-        <label class="text-danger" *ngIf="f['email'].touched && 
-        f['email'].errors && f['email'].errors['required']
-        ">this is mandotary</label>
-      </div>
+    <div *ngIf="formChoice; then thenTemplate; else elseTemplate"></div>
+    <ng-template #thenTemplate>
+      <form #form="ngForm" autocomplete="off" (submit)="onSubmitLogin(form)">
         <div class="form-group required">
           <label for="">username</label>
-          <input class="form-control" formControlName='username'>
-          <label class="text-danger" *ngIf="f['username'].touched && 
-          f['username'].errors && f['username'].errors['required']
-          ">this is mandotary</label>
+          <input
+            class="form-control"
+            #username="ngModel"
+            name="username"
+            [(ngModel)]="Login_formModel.username"
+          />
+          <label
+            class="text-danger"
+            *ngIf="
+              f['username'].touched &&
+              f['username'].errors &&
+              f['username'].errors['required']
+            "
+            >this is mandotary</label
+          >
         </div>
-    <div class="form-group required">
-      <label for="">phone number</label>
-      <input class="form-control" formControlName='phone'>
-      <label class="text-danger" *ngIf="f['phone'].touched && 
-      f['phone'].errors && f['phone'].errors['required']
-      ">this is mandotary</label>
-    </div>
-      <div class="form-group required">
-        <label for="">password</label>
-        <input class="form-control" formControlName='password'>
-         <div *ngIf="f['password'].touched && f['password'].invalid">
-         <label for="" class="text-danger" *ngIf=" f['password'].errors 
-         && f['password'].errors['required']"> required</label>
-         <label for="" class="text-danger" *ngIf=" f['password'].errors 
-         && f['password'].errors['minLength']">min 3 letters required</label>
-      </div>
-      </div>
-      <div class="form-group required">
-        <label for="">Confirm password</label>
-        <input class="form-control" formControlName='confirm_password'>
+        <div class="form-group required">
+          <label for="">password</label>
+          <input
+            class="form-control"
+            #password="ngModel"
+            name="password"
+            [(ngModel)]="Login_formModel.password"
+          />
+          <label
+            class="text-danger"
+            *ngIf="
+              f['username'].touched &&
+              f['username'].errors &&
+              f['username'].errors['required']
+            "
+            >this is mandotary</label
+          >
+        </div>
+        <div class="modal-footer">
+          <button
+            type="submit"
+            [disabled]="form.invalid"
+            class="btn btn-warning mx-auto"
+            (click)="modal.close('Save click')"
+          >
+            Login
+          </button>
+        </div>
+      </form>
+    </ng-template>
+    <ng-template #elseTemplate>
+      <form
+        [formGroup]="Reg_formModel"
+        (submit)="onSubmit()"
+        autocomplete="off"
+      >
+        <div class="form-group required">
+          <label for="">email</label>
+          <input class="form-control" formControlName="email" />
+          <label
+            class="text-danger"
+            *ngIf="
+              f['email'].touched &&
+              f['email'].errors &&
+              f['email'].errors['email']
+            "
+            >not valid email</label
+          >
+          <label
+            class="text-danger"
+            *ngIf="
+              f['email'].touched &&
+              f['email'].errors &&
+              f['email'].errors['required']
+            "
+            >this is mandotary</label
+          >
+        </div>
+        <div class="form-group required">
+          <label for="">username</label>
+          <input class="form-control" formControlName="username" />
+          <label
+            class="text-danger"
+            *ngIf="
+              f['username'].touched &&
+              f['username'].errors &&
+              f['username'].errors['required']
+            "
+            >this is mandotary</label
+          >
+        </div>
+        <div class="form-group required">
+          <label for="">phone number</label>
+          <input class="form-control" formControlName="phone" />
+          <label
+            class="text-danger"
+            *ngIf="
+              f['phone'].touched &&
+              f['phone'].errors &&
+              f['phone'].errors['required']
+            "
+            >this is mandotary</label
+          >
+        </div>
+        <div class="form-group required">
+          <label for="">password</label>
+          <input class="form-control" formControlName="password" />
+          <div *ngIf="f['password'].touched && f['password'].invalid">
+            <label
+              for=""
+              class="text-danger"
+              *ngIf="f['password'].errors && f['password'].errors['required']"
+            >
+              required</label
+            >
+            <label
+              for=""
+              class="text-danger"
+              *ngIf="f['password'].errors && f['password'].errors['minLength']"
+              >min 3 letters required</label
+            >
+          </div>
+        </div>
+        <div class="form-group required">
+          <label for="">Confirm password</label>
+          <input class="form-control" formControlName="confirm_password" />
 
-        <div *ngIf="f['confirm_password'].touched && f['confirm_password'].invalid">
-          <label for="" class="text-danger" *ngIf=" f['confirm_password'].errors 
-          && f['confirm_password'].errors['required']">conf pass required</label>
+          <div
+            *ngIf="
+              f['confirm_password'].touched && f['confirm_password'].invalid
+            "
+          >
+            <label
+              for=""
+              class="text-danger"
+              *ngIf="
+                f['confirm_password'].errors &&
+                f['confirm_password'].errors['required']
+              "
+              >conf pass required</label
+            >
 
-          <label for="" class="text-danger" *ngIf=" f['confirm_password'].errors 
-          && f['confirm_password'].errors['check']">conf pass required</label>
-       </div>
-    </div>
-    <!-- <div class="form-row">
+            <label
+              for=""
+              class="text-danger"
+              *ngIf="
+                f['confirm_password'].errors &&
+                f['confirm_password'].errors['check']
+              "
+              >conf pass required</label
+            >
+          </div>
+        </div>
+        <!-- <div class="form-row">
       <div class="form-group">
         <button type="submit" class="">sign up</button>
       </div>
     </div> -->
-    <div class="form-group">
-    <div class="modal-footer">
-      <button type="submit" [disabled]='!Reg_formModel.valid' class="btn btn-warning mx-auto" (click)="modal.close('Save click')">Register</button>
-    </div>
-    </div>
-  </form>
-</ng-template>
+        <div class="form-group">
+          <div class="modal-footer">
+            <button
+              type="submit"
+              [disabled]="!Reg_formModel.valid"
+              class="btn btn-warning mx-auto"
+              (click)="modal.close('Save click')"
+            >
+              Register
+            </button>
+          </div>
+        </div>
+      </form>
+    </ng-template>
   </div>
 </ng-template>
 
-
-
-
-<nav class="navbar navbar-expand-lg navbar-dark col-12 sticky-top"
-style="background-color: rgb(192, 20, 14)">
+<nav
+  class="navbar navbar-expand-lg navbar-dark col-12 sticky-top"
+  style="background-color: rgb(192, 20, 14)"
+>
   <div class="container-fluid">
     <a class="navbar-brand ms-3 pb-3" href="#"
-    ><img src="../../assets/images/Logo.svg" width="70" alt=""
-  /></a>
-    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      ><img src="../../assets/images/Logo.svg" width="70" alt=""
+    /></a>
+    <button
+      class="navbar-toggler"
+      type="button"
+      data-bs-toggle="collapse"
+      data-bs-target="#navbarSupportedContent"
+      aria-controls="navbarSupportedContent"
+      aria-expanded="false"
+      aria-label="Toggle navigation"
+    >
       <span class="navbar-toggler-icon"></span>
     </button>
     <div class="collapse navbar-collapse" id="navbarSupportedContent">
-      <ul class="navbar-nav me-auto mb-2 mb-lg-0  text-center">
-        <li class="nav-item ">
-          <a
-          class="nav-link dropdown-toggle active fw-bold fs-5"
-          href="#"
-          id="navbarDropdown"
-          role="button"
-          data-bs-toggle="offcanvas"
-          data-bs-target="#offcanvas"
-          aria-expanded="false"
-          >
-          Delivery
-        </a>
-
-        <!-- <button class="btn float-end" data-bs-toggle="offcanvas" data-bs-target="#offcanvas" role="button"></button> -->
-
-        <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
-          <li><a class="dropdown-item" href="#">Action</a></li>
-          <li><a class="dropdown-item" href="#">Another action</a></li>
-          <li><hr class="dropdown-divider" /></li>
-          <li><a class="dropdown-item" href="#">Something else here</a></li>
-        </ul>
-      </li>
-      <li class="nav-item ">
-        <a
-          class="nav-link active"
-          style="border-bottom: 1px solid white; padding-bottom: 2px"
-          aria-current="page"
-          href="#"
-          >Location not set</a
-        >
-        </li>
-
-        <li class="nav-item ">
-          <a
-          class="nav-link dropdown-toggle active fw-bold mt-0 fs-5"
-                      href="#"
-                      id="navbarDropdown"
-                      role="button"
-                      data-bs-toggle="dropdown"
-                      aria-expanded="false"
-                      >
-                      Now
-                    </a>
-        </li>
-        <li class="nav-item ">
-          <a
-          class="nav-link active"
-                  href="https://apps.apple.com/in/app/mcdelivery-india-west-south/id920750178"
-                  ><img
-                  src="../../assets/images/Appstore.svg"
-                  alt=""
-                  style="width: 133px; height: 43px"
-                  /></a>
-                </li>
-                <li class="nav-item ">
-          <a
-          class="nav-link active pr-6"
-                  href="https://play.google.com/store/apps/details?id=com.il.mcdelivery&hl=en"
-                  ><img
-                    src="../../../assets/images/Playstore.svg"
-                    alt=""
-                    style="width: 133px; height: 42px"
-                /></a>
-              </li>
-              
-        <li class="nav-item ">
-          <a
-          class="nav-link active fs-5 text-white"
-          href="#"
-          (click)="changePage()"
-          >Offers</a
-          >
-        </li>
-        <li class="nav-item ">
-          <a
-                  style="cursor: pointer"
-                  class="nav-link text-white fs-5 active"
-                  (click)="open(content)"
-                  >Login/Sign Up</a
-                  >
-        </li>
-      </ul>
-      </div>
-    </div>
-</nav>
-
-
-
-
-<!-- third   -->
-
-<!-- 
-<nav class="navbar navbar-expand-lg navbar-light  bg-light">
-  <div class="container-fluid">
-    <a class="navbar-brand" href="#">Navbar</a>
-    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-      <span class="navbar-toggler-icon"></span>
-    </button>
-    <div class="collapse navbar-collapse justify-content-center d-flex flex-row" id="navbarSupportedContent">
-      <ul class="navbar-nav me-auto mb-2  mb-lg-0">
-        
+      <ul class="navbar-nav me-auto mb-2 mb-lg-0 text-center">
         <li class="nav-item">
-          <a class="nav-link active" aria-current="page" href="#">Home</a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link" href="#">Link</a>
-        </li>
-        <li class="nav-item dropdown">
-          <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-            Dropdown
+          <a
+            class="nav-link dropdown-toggle active fw-bold fs-5"
+            href="#"
+            id="navbarDropdown"
+            role="button"
+            data-bs-toggle="offcanvas"
+            data-bs-target="#offcanvas"
+            aria-expanded="false"
+          >
+            Delivery
           </a>
+
+          <!-- <button class="btn float-end" data-bs-toggle="offcanvas" data-bs-target="#offcanvas" role="button"></button> -->
+
           <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
             <li><a class="dropdown-item" href="#">Action</a></li>
             <li><a class="dropdown-item" href="#">Another action</a></li>
-            <li><hr class="dropdown-divider"></li>
+            <li><hr class="dropdown-divider" /></li>
             <li><a class="dropdown-item" href="#">Something else here</a></li>
           </ul>
         </li>
         <li class="nav-item">
-          <a class="nav-link disabled" href="#" tabindex="-1" aria-disabled="true">Disabled</a>
+          <a
+            class="nav-link active"
+            style="border-bottom: 1px solid white; padding-bottom: 2px"
+            aria-current="page"
+            href="#"
+            >Location not set</a
+          >
+        </li>
+
+        <li class="nav-item">
+          <a
+            class="nav-link dropdown-toggle active fw-bold mt-0 fs-5"
+            href="#"
+            id="navbarDropdown"
+            role="button"
+            data-bs-toggle="dropdown"
+            aria-expanded="false"
+          >
+            Now
+          </a>
+        </li>
+        <li class="nav-item">
+          <a
+            class="nav-link active"
+            href="https://apps.apple.com/in/app/mcdelivery-india-west-south/id920750178"
+            ><img
+              src="../../assets/images/Appstore.svg"
+              alt=""
+              style="width: 133px; height: 43px"
+          /></a>
+        </li>
+        <li class="nav-item">
+          <a
+            class="nav-link active pr-6"
+            href="https://play.google.com/store/apps/details?id=com.il.mcdelivery&hl=en"
+            ><img
+              src="../../../assets/images/Playstore.svg"
+              alt=""
+              style="width: 133px; height: 42px"
+          /></a>
+        </li>
+
+        <li class="nav-item">
+          <a
+            class="nav-link active fs-5 text-white"
+            href="#"
+            (click)="changePage()"
+            routerLink="/offers"
+            routerLinkActive="active"
+            >Offers</a
+          >
+        </li>
+        <li class="nav-item">
+          <a
+            style="cursor: pointer"
+            class="nav-link text-white fs-5 active"
+            (click)="open(content)"
+            >My Orders</a
+          >
+        </li>
+        <li class="nav-item">
+          <a
+            *ngIf="!showLoginButton"
+            style="cursor: pointer"
+            class="nav-link text-white fs-5 active"
+            (click)="open(content)"
+            >Login/Sign Up</a
+          >
         </li>
       </ul>
-      <form class="d-flex">
-        <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
-        <button class="btn btn-outline-success" type="submit">Search</button>
-      </form>
     </div>
   </div>
-    
-</nav> -->
-
-
-<!-- <div class="d-flex flex-row justify-content-around bd-highlight mb-3">
- <div class="p-2 bd-highlight">Flex item 1</div>
- <div class="p-2 bd-highlight">Flex item 2</div>
- <div class="p-2 bd-highlight">Flex item 3</div>
-</div> -->
-<!-- <div class="d-flex justify-content-around">...</div> -->
+</nav>

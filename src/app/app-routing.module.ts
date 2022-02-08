@@ -9,6 +9,7 @@ import { HomePageComponent } from '../../../../Projects/Routing/src/app/home-pag
 import { Auth1Guard } from './auth/auth1.guard';
 import { AdminPanelComponent } from './admin/admin-panel/admin-panel.component';
 import { AdminModule } from './admin/admin.module';
+import { NotFoundComponent } from './shared/components/not-found/not-found.component';
 
 const routes: Routes = [
   {path:'',redirectTo:'/home',pathMatch:'full'},
@@ -22,9 +23,11 @@ const routes: Routes = [
   // {path:'home2',component:Home2Component,canActivate:[Auth1Guard]},
   // {path:'home',component:HomePageComponent},
   {path:'admin',component:AdminPanelComponent},
+  // , canActivate:[Auth1Guard]
   {path:'home',loadChildren:()=>import('./structure-components/home/home.module').then((m)=>m.HomeModule)},
-  {path:'page2',loadChildren:()=>import('./structure-components/second-page/second-page.module').then((m)=>m.SecondPageModule)},
-  {path:'dashboard',loadChildren:()=>import('./admin/admin.module').then((m)=>m.AdminModule)}
+  {path:'home2',loadChildren:()=>import('./structure-components/second-page/second-page.module').then((m)=>m.SecondPageModule)},
+  {path:'dashboard',loadChildren:()=>import('./admin/admin.module').then((m)=>m.AdminModule)},
+  {path:'**',component:NotFoundComponent},
   
   
 ];

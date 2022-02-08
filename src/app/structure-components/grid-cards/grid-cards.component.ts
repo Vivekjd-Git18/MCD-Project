@@ -14,13 +14,12 @@ export class GridCardsComponent implements OnInit {
   }
 
   GridCardArray:any=[
-    {img:"../../assets/images/Banner160.jpg"},
-    {img:"../../assets/images/Banner166.jpg"},
-    {img:"../../assets/images/Banner206.jpg"},
-    {img:"../../assets/images/Banner208.png"},
-    {img:"../../assets/images/Banner239.jpg"},
-    {img:"../../assets/images/Banner240.jpg"},
-    {img:"../../assets/images/Banner243.jpg"} 
+    {img:"https://images.mcdelivery.co.in/hardcastle-restaurants-pvt-ltd/image/upload/f_auto,q_auto,w_420/v1637569169/WebBanner/Banner258.jpg"},
+    {img:"https://images.mcdelivery.co.in/hardcastle-restaurants-pvt-ltd/image/upload/f_auto,q_auto,w_420/v1632130374/WebBanner/Banner239.png"},
+    {img:"https://images.mcdelivery.co.in/hardcastle-restaurants-pvt-ltd/image/upload/f_auto,q_auto,w_420/v1619179735/WebBanner/Banner208.jpg"},
+    {img:"https://images.mcdelivery.co.in/hardcastle-restaurants-pvt-ltd/image/upload/f_auto,q_auto,w_420/v1617985988/WebBanner/Go_Free_1140x690.jpg"},
+    {img:"https://images.mcdelivery.co.in/hardcastle-restaurants-pvt-ltd/image/upload/f_auto,q_auto,w_420/v1617986771/WebBanner/McD_April_Update_30_1140x690.jpg"},
+    {img:"https://images.mcdelivery.co.in/hardcastle-restaurants-pvt-ltd/image/upload/f_auto,q_auto,w_420/v1600168800/WebBanner/Banner166.png"},
   ]
 
 

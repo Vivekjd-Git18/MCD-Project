@@ -7,6 +7,7 @@
         <input
           style="width: 390px"
           id="menu-search"
+          [(ngModel)]="searchProduct"
           name="search"
           placeholder="Search from menu"
           type="text"
@@ -57,55 +58,9 @@
           type="checkbox"
           role="switch"
           id="flexSwitchCheckDefault"
+          (click)="hit2()"
         />
       </div>
     </div>
   </div>
 </div>
-
-<!-- toggles -->
-<!-- 
-<div _ngcontent-ssp-c3="" class="toggle-section">
-  <app-calorie-veg _ngcontent-ssp-c3="" _nghost-ssp-c7=""
-    ><div _ngcontent-ssp-c7="" class="common-filter">
-      <div _ngcontent-ssp-c7="" class="calorie-filter">
-        <img
-          _ngcontent-ssp-c7=""
-          alt="calorie"
-          loading="lazy"
-          src="https://images.mcdelivery.co.in/hardcastle-restaurants-pvt-ltd/image/upload/v1591261933/NewWebsiteResource2020/Assets/Img/calorie.svg"
-        />
-        <p _ngcontent-ssp-c7="">Calorie</p>
-        <label _ngcontent-ssp-c7="" class="switch"
-          ><input
-            _ngcontent-ssp-c7=""
-            checked=""
-            type="checkbox"
-            class="ng-valid ng-dirty ng-touched" /><span
-            _ngcontent-ssp-c7=""
-            class="slider round"
-          ></span
-        ></label>
-      </div>
-      <div _ngcontent-ssp-c7="" class="veg-filter">
-        <img
-          _ngcontent-ssp-c7=""
-          alt="veg"
-          height="12px"
-          loading="lazy"
-          src="https://images.mcdelivery.co.in/hardcastle-restaurants-pvt-ltd/image/upload/v1591261933/NewWebsiteResource2020/Assets/Img/Veg.svg"
-          width="12px"
-        />
-        <p _ngcontent-ssp-c7="">Veg Only</p>
-        <label _ngcontent-ssp-c7="" class="switch"
-          ><input
-            _ngcontent-ssp-c7=""
-            type="checkbox"
-            class="ng-untouched ng-pristine ng-valid" /><span
-            _ngcontent-ssp-c7=""
-            class="slider round"
-          ></span
-        ></label>
-      </div></div
-  ></app-calorie-veg>
-</div> -->

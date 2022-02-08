@@ -15,5 +15,8 @@ export class UserService {
   login(formdata:any) {
     return this.http.post(this.BASEurl + '/ApplicationUser/Login', formdata);
   }
-
+getUserProfile(){
+  var tokenHeader = new HttpHeaders({'Authorization':'Bearer '+localStorage.getItem('token')});
+  return this.http.get(this.BASEurl+'/UserProfile',{headers:tokenHeader});
+}
 }

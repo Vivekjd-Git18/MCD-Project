@@ -26,20 +26,26 @@ launchBool(stat:boolean){
     this.data=_data
   }
   
+getToken():string|null{
+  return localStorage.getItem('token')
+}
 
-  
+  isLoggedIn(){
+    return this.getToken()!=null;
+  }
 
+  // private SerachPro = new BehaviorSubject<string>('a');
+  // current = this.SerachPro.asObservable();
 
-
-  
-  // msg!:string
-  // dataShow(){
-  //   return this.data
+  // RefreshSearch(text:string){
+  //   this.SerachPro.next(text)
   // }
-  // msgChange(_msg: string){
-  //   this.msg=_msg
-  // }
-  // msgShow(){
-  //   return this.msg
-  // }
+msg!:string
+  setSearch(data:any){
+      this.msg=data;
+  }
+  getSeacrh(){
+    return this.msg
+  }
+
 }

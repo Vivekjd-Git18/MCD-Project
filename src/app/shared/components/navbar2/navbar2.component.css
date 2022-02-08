@@ -16,8 +16,12 @@
     color: #ffe926;
 
   }
-  .hov:hover{
+  a:hover{
     display: inline-block;
     position: relative;
     color: #ffe926;
   }
+a{
+  text-decoration: none;
+  color: #4e460b;
+}

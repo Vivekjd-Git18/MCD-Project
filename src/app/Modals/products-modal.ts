@@ -7,6 +7,7 @@ export class ProductsModal {
     productImage!:string;
     category_id!:number;
     categoryImage!:string;
+    Product_Type!:any;
 }
 
 // calories: 450

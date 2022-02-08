@@ -8,6 +8,7 @@ import { Router } from '@angular/router';
 
 import { NgModel} from '@angular/forms';
 import { UserService } from 'src/app/services/user.service';
+import { OtherServicesService } from '../../../services/other-services.service';
 
 @Component({
   selector: 'app-navbar',
@@ -20,13 +21,14 @@ export class NavbarComponent implements OnInit {
   @Output() parentFun:EventEmitter<Boolean>= new EventEmitter<Boolean>();
   
   BASEurl=BASEuri;
-
+  showLoginButton!:boolean
 
   //login stuff starts
   Login_formModel = {
     username:'',
     password:''
   }
+  userDetails!:any;
 
   // Login_formModel = this.fb.group({
   //   username:['',Validators.required],
@@ -68,14 +70,25 @@ constructor(private modalService: NgbModal,
             private http:HttpClient,
             private toast:ToastrService,
             private router:Router,
-            private Userservice:UserService) {}
-
+            private Userservice:UserService,
+            private other:OtherServicesService) {}
+  searchProduct!:string
   ngOnInit(){
-    // this.validatingForm = new FormGroup({
-    //   'username':new FormControl(null),
-    //   'email': new FormControl(),
-    // });
     this.Reg_formModel.reset();
+
+    if (this.other.isLoggedIn()) {
+      this.showLoginButton=false;
+
+    }
+    this.Userservice.getUserProfile().subscribe(
+      res=>{
+        this.userDetails=res;
+      },
+      err=>{
+        console.log(err)
+      }
+    )
+    this.other.setSearch(this.searchProduct)
   }
 
   changePage(){

@@ -14,6 +14,7 @@ import { SearchMenubarComponent } from '../search-menubar/search-menubar.compone
 import { List1Component } from '../list1/list1.component';
 import { ProductListComponent } from '../product-list/product-list.component';
 import { CartBlockComponent } from '../cart-block/cart-block.component';
+import { Ng2SearchPipeModule } from 'ng2-search-filter';
 
 @NgModule({
   declarations: [
@@ -34,7 +35,8 @@ import { CartBlockComponent } from '../cart-block/cart-block.component';
     FormsModule,
     ReactiveFormsModule,
     CarouselModule,
-    OwlModule
+    OwlModule,
+    Ng2SearchPipeModule,
 
   ]
 })

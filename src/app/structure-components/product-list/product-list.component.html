@@ -8,7 +8,10 @@
   <div *ngIf=newdata>
   hello
 </div> -->
-<div *ngFor="let p of allProducts  ">
+
+
+<!-- <tr *ngFor="let row of productData | filter:searchProduct"></tr> -->
+<div *ngFor="let p of allProducts|filter:searchProduct">
 
     <div class="row  g-4 py-2 " > 
   <div class="col-12 pr-4 ">
